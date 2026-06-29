@@ -14,33 +14,78 @@
 
 html {
     width: 100%;
-    height: 100%;
+    height: 101%;
     margin: 0;
     padding: 0;
     background: linear-gradient(168deg, var(--cor1) 0%, var(--cor2) 100%);
     transition: --cor1 3s, --cor2 5s;
 }
 
+body {
+    margin: 0;
+}
+
+.enter {
+    position: absolute;
+    background-color: rgba(240, 240, 240, 0.98);
+    width: 100%;
+    height: 101%;
+    z-index: 1;
+}
+
 .timer {
     display: flex;
     flex-direction: row;
-    height: 80vh;
+    height: 50%;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-.flip-clock-label {
-    display: none;
-}
-
 .flip-clock-wrapper {
     font: bold 11px "Alarm Clock", sans-serif;
+    transform: scale(1.2);
 }
 
 .flip-clock-wrapper ul li a div div.inn {
     background-color: #030303;
-    color: #ea76cb
+    color: #ea76cb;
+}
+
+.intro {
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 3em;
+}
+
+.text {
+    color: white;
+    font-family: "Ubuntu";
+    font-size: 2rem;
+}
+
+.texdev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+}
+
+.textenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    color: black;
+    user-select: none;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 4em;
 }
 
 .timerend {
@@ -48,24 +93,27 @@ html {
     font: bold 11px "Alarm Clock", sans-serif;
     font-size: 70px;
     color: #e9d7d7;
-    text-shadow: 0 1px 2px #000;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ea76cb, 0 0 40px #ea76cb, 0 0 50px #ea76cb, 0 0 60px #ea76cb, 0 0 70px #ea76cb;
 }
 
-.timerend2 {
-    font: bold 11px "Alarm Clock", sans-serif;
-    font-size: 70px;
-    color: #4c4b4b;
-    text-shadow: 0 1px 2px #000;
+.mea1 {
+    width: 20rem;
+    padding-bottom: 20px;
+}
+
+.texinfo {
+    font-size: 2em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .blink {
     animation: blink-animation 1s steps(1, start) infinite;
-}
-
-.hidden {
-    display: none !important;
-    animation: none;
 }
 
 @keyframes blink-animation {
@@ -86,40 +134,20 @@ html {
   inherits: false;
 }
 
-.extra1 {
-    position: absolute;
-    top: 55vh;
-}
-
-.text {
-    color: white;
-    font-family: "Ubuntu";
-    font-size: 1.2rem;
-}
-
-.extra2 {
-    position: absolute;
-    top: 63vh;
-}
-
-.extra3 {
-    position: absolute;
-    bottom: 70vh;
-}
-
 .rabbit {
     width: 12rem;
 }
 
-.text1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-left: 3.5rem;
-}
+@media screen and (max-width: 935px) {
+    .title {
+        align-self: baseline;
+        overflow-wrap: anywhere;
+    }
+    html {
+        height: 250%;
+    }
 
-@media only screen and (max-width: 700px)  {
-    .text1 {
-        font-size: 2rem;
-        margin-left: 0;
+    .enter {
+        height: 250%;
     }
 }
