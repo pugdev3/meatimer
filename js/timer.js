@@ -78,6 +78,7 @@ $(document).ready(function () {
     }
 
     // Hide elements
+    $(".aposta").fadeOut(2000);
     $(".intro").fadeOut(2000);
     $(".info").fadeOut(2000, softHideInfo);
 
