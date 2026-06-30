@@ -1,5 +1,9 @@
 $(document).ready(function () {
   let endAudio;
+  let endAudio2;
+  let endMusic;
+  let legeMusic1;
+  let legeMusic2;
   var itsSoOver = false;
   var clock;
   var audioPlayed;
@@ -32,8 +36,18 @@ $(document).ready(function () {
   }
 
   $(".enter").on("click", function () {
-    endAudio = new Audio("fnaf.mp3");
+    // Load our sound effects / music owo
+    endAudio = new Audio("music/fnaf.mp3");
     endAudio.load();
+    endAudio2 = new Audio("music/chaos.mp3");
+    endAudio2.load();
+    endMusic = new Audio("music/mea.mp3");
+    endMusic.load();
+    legeMusic1 = new Audio("music/echoingmind.mp3");
+    legeMusic1.load();
+    legeMusic2 = new Audio("music/utopia.mp3");
+    legeMusic2.load();
+
     $(".enter").hide();
     ShowClock();
   });
@@ -75,6 +89,54 @@ $(document).ready(function () {
       $(".mea1").hide();
     }
 
+    function playEndSequence() {
+      setTimeout(() => {
+        $(".loading").show();
+        $(".info").hide();
+        $(".intro").hide();
+
+        let bgVideo = $("#background");
+        bgVideo.get(0).controls = false;
+        bgVideo.get(0).src = "media/background.webm";
+        bgVideo.get(0).play();
+        bgVideo.show();
+
+        $("body").append(
+          '<div class="endinfo"><p class="text texshadow">então... e o namoradinho?</p><img class="mea" src="./media/mearelacionamentos1.png" /></div>',
+        );
+        $("body").append(
+          '<footer class="footer"><p class="text texshadow texfooter">Criado por <a href="https://github.com/pugdev3">@pugdev3</a> / Música por <a href="https://sndo.ffm.to/dx9vezz">@zlegend77</a> / Muito obrigado por visitar o website <3 </p></footer>',
+        );
+        $(
+          '<div class="endintro"><p class="text texshadow">parece que o tempo acabou mea...</p><img class="gatinho" src="./media/gatinho.webp" /></div>',
+        ).insertBefore(".timer");
+      }, 2000);
+      setTimeout(() => {
+        endAudio2.play();
+      }, 3000);
+      setTimeout(() => {
+        endMusic.play();
+        endMusic.addEventListener("ended", function () {
+          setTimeout(() => {
+            legeMusic1.play();
+          }, 1000);
+        });
+        legeMusic1.addEventListener("ended", function () {
+          setTimeout(() => {
+            legeMusic2.play();
+          }, 1000);
+        });
+        $(".loading").hide();
+      }, 6000);
+      setTimeout(() => {
+        $("body").append('<img class="meatwo" src="./media/mea.png" />');
+        setTimeout(() => {
+          $(".mea").attr("src", "./media/mearelacionamentos2.png");
+          $(".meatwo").remove();
+        }, 500);
+      }, 22300);
+    }
+
     var styles = `
             html {
                 --cor1: #391c31;
@@ -98,6 +160,7 @@ $(document).ready(function () {
     setTimeout(() => {
       $(".timerend").removeClass("blink");
       $("<style>").text(styles2).appendTo("head");
+      playEndSequence();
     }, 8000);
   }
 });

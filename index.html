@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://meatimer.vercel.app">
     <meta property="og:title" content="Timer da aposta da mea (FALTA APENAS 1 DIA!!!)">
     <meta property="og:description" content="Veja em tempo real quanto tempo falta para mea perder a aposta!!">
-    <meta property="og:image" content="https://meatimer.vercel.app/images/meaTimer.png">
+    <meta property="og:image" content="https://meatimer.vercel.app/media/meaTimer.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,20 +24,24 @@
     <meta property="twitter:url" content="https://meatimer.vercel.app/" />
     <meta property="twitter:title" content="Timer da aposta da mea (FALTA APENAS 1 DIA!!)" />
     <meta property="twitter:description" content="Veja em tempo real quanto tempo falta para mea perder a aposta!!" />
-    <meta property="twitter:image:src" content="https://meatimer.vercel.app/images/meaTimer.png" />
-    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+    <meta property="twitter:image:src" content="https://meatimer.vercel.app/media/meaTimer.png" />
+    <link rel="icon" type="image/x-icon" href="/media/icon.png">
     <title>Timer da aposta da mea</title>
   </head>
   <body>
+    <img class="aposta" src="./media/aposta.webp" />
     <div class="enter">
       <p class="text textenter">Clique para ver o timer</p>
+    </div>
+    <div class="loading">
+      <p class="text texloading">:)</p>
     </div>
     <div class="intro">
       <h1 class="text title">mea relacionamentos</h1>
       <p class="text">
         veja quanto tempo falta para o fim de sua aposta em tempo real!
       </p>
-      <img class="mea1" src="./images/meacommedo.png" />
+      <img class="mea1" src="./media/meacommedo.png" />
     </div>
     <div class="timer">
       <div class="timerend blink">00:00:00</div>
@@ -47,6 +51,7 @@
       <p class="text">01/07/2026 - UTC: -03:00 (Horário de Brasília)</p>
       <p class="text texinfo">A mea tem pouco tempo para arrumar um namoradinho <br>e pra comemorar essa data, eu criei esse website</p>
     </div>
+    <video muted loop id="background" style="display: none;"></video>
   </body>
   <script src="dist/timer.min.js" type="text/javascript"></script>
 </html>
