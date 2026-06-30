@@ -14,14 +14,16 @@
 
 html {
     width: 100%;
-    height: 101%;
+    height: fit-content;
     margin: 0;
     padding: 0;
     background: linear-gradient(168deg, var(--cor1) 0%, var(--cor2) 100%);
     transition: --cor1 3s, --cor2 5s;
+    overflow: auto;
 }
 
 body {
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -29,7 +31,7 @@ body {
     position: absolute;
     background-color: rgba(240, 240, 240, 0.98);
     width: 100%;
-    height: 101%;
+    height: 100%;
     z-index: 1;
 }
 
@@ -138,16 +140,19 @@ body {
     width: 12rem;
 }
 
-@media screen and (max-width: 935px) {
+@media screen and (max-width: 750px) {
     .title {
         align-self: baseline;
         overflow-wrap: anywhere;
-    }
-    html {
-        height: 250%;
+        font-size: 3em;
     }
 
-    .enter {
-        height: 250%;
+    .intro {
+        padding: 0.5em;
+    }
+
+    .flip-clock-wrapper {
+        max-width: 90%;
+        transform: none;
     }
 }

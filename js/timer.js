@@ -26,10 +26,6 @@ $(document).ready(function () {
       stop: itsOver,
       countdown: true,
     });
-    $(".flip-clock-wrapper.ul.li.a.div.up.div.inn").each(function() {
-        const html = $(this).html();
-        console.log(html);
-    })
     if (difference <= 0) {
       itsOver();
     }
@@ -39,7 +35,6 @@ $(document).ready(function () {
     endAudio = new Audio("fnaf.mp3");
     endAudio.load();
     $(".enter").hide();
-    $("")
     ShowClock();
   });
 
