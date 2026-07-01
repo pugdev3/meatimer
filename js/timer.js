@@ -15,7 +15,9 @@ $(document).ready(function () {
     }),
   );
 
-  const futureDate = new Date("2026-07-01T00:00-03:00");
+  const futureYear = new Date().getFullYear();
+
+  const futureDate = new Date(`${futureYear + 1}-07-01T00:00-03:00`);
   const futureDateFormatted = new Date(
     futureDate.toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }),
   );
@@ -26,7 +28,7 @@ $(document).ready(function () {
 
   function ShowClock() {
     clock = $(".clock").FlipClock(difference, {
-      clockFace: "TwentyFourHourClockFace",
+      clockFace: "DailyCounter",
       stop: itsOver,
       countdown: true,
     });
@@ -50,6 +52,10 @@ $(document).ready(function () {
 
     $(".enter").hide();
     ShowClock();
+  });
+
+  $(".butfim").on("click", function() {
+    itsOver();
   });
 
   function itsOver() {
@@ -78,6 +84,7 @@ $(document).ready(function () {
     }
 
     // Hide elements
+    $(".fim").fadeOut(2000);
     $(".aposta").fadeOut(2000);
     $(".intro").fadeOut(2000);
     $(".info").fadeOut(2000, softHideInfo);
